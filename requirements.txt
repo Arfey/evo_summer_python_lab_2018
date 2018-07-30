@@ -1,0 +1,5 @@
+dataclasses
+elasticsearch
+elasticsearch-dsl
+Faker
+

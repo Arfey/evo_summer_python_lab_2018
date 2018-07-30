@@ -1,0 +1,20 @@
+version:  '3'
+
+services:
+
+  datascience-notebook:
+      build: .
+      volumes:
+        - ${LOCAL_WORKING_DIR}:/home/jovyan/work
+      environment:
+        JUPYTER_LAB_ENABLE: "yes"
+        hostname: localhost
+      ports:
+        - ${PORT}:8888
+
+  elsatic:
+    image: elasticsearch:latest
+    ports:
+      - 9200:9200
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
